@@ -1,7 +1,10 @@
 // A.4.1 
 
-/* .some-class -> It applies syles to all elements of the page which are having this class.
+/* 
+.some-class -> It applies syles to all elements of the page which are having this class.
    a.some-class -> Selecting only anchor elements associated with .some-class class. 
+   
+   // .some-class is not preferred way compare to a.some-class, when we want style particular only anchor elements of the class.  
 */
 a.some-class, 
 .some-class 
@@ -10,9 +13,12 @@ a.some-class,
 
 // A.4.2 
 
-/* .parent-class .child-class -> This style applies all child elements which having .child-class of .parent-class elements  
+/* 
+.parent-class .child-class -> This style applies all child elements which having .child-class of .parent-class elements  
    .parent-class > .child-class -> It will target elements which are direct children of a .parent-class element.
    .child-class--variant  -> selecting all elements which are having .child-class--variant class with irrespective of any parent.
+   
+   // .parent-class > .child-clas is not preferred way, if we want to change order of child elements of parent. .child-class--variant applies  only to elements with this class, We need to defined with elements in every page, which is not suitable for reuse. 
 */
 
 .parent-class .child-class, 
@@ -24,7 +30,9 @@ a.some-class,
 // A.4.3 
 /* 
 .parent-class #child-id -> It applies to all child with #child-id ID of .parent class. If we want to particular child elements of any parent, this is preferrable compare to #child-id.
-#child-id -> Style will be applied to all elements with #child-id ID of page irrespective of any parent.  
+#child-id -> Style will be applied to all elements with #child-id ID of page irrespective of any parent.
+
+// .parent-class #child-id is not preferrable if any chances to use #child-id element outside of the parent.
 */
 
 .parent-class #child-id,
@@ -33,8 +41,9 @@ a.some-class,
 
 /* 
 -> ul li a is selecting all anchor tags of onorderd list, this is preferrable compare to ul > li > a.
--> ul > li > a is applies styles to direct child of list. If order is missed ,style will not apply on to this. 
 -> ul a selector slecting all anchor element of an unorder list with irrespective any order of elements.
+
+ //ul > li > a is applies styles to direct child of list. Which is not preferrable if we need to change order of elements, then style will not apply on to this.
  */
 // A.4.4 
 ul li a,
@@ -43,25 +52,30 @@ ul > li > a {..}
 
 
 // A.4.5 
-/*  -> input[type="submit"] is applies to all submit button which is preferred for add common styles all submit button in the page.
-	-> .submit-button class is useful when sumbit button need little changes or particular styles.
+/*  
+-> input[type="submit"] is applies to all submit button which is preferred for add common styles all submit button in the page.	 
+	
+ //.submit-button class is useful when sumbit button needs little changes or particular styles, which is not preferrable for reuse if we want to change class of submit button or we should add this class to every submit button for styles.  
  */
 input[type="submit"], 
 .submit-button {...} 
 
 
 // A.4.6 
-/* -> ul li:last-child is add style to all last li elements of ul.
--> ul li:last-child is preferrable when we want to add comman styles all last li child elements of ul in the page.
--> ul li.last-child applies styles to all li which having .last-child. It means selector may not be the last li of ul. It applies only .last-child class is defined with li.
+/* 
+-> ul li:last-child is add style to all last li elements of ul. preferrable when we want to add comman styles all last li child elements of ul in the page.
+
+//ul li.last-child is not preferrable for reuse beacause it applies styles to all li which having .last-child. It means selector may not be the last li element of ul. It applies only .last-child class is defined with li.
  */
 ul li:last-child, 
 ul li.last-child {...} 
 
 
 // A.4.7 
-/*  -> ul li:nth-child(2) applies styles to 2nd element of ul. 
--> ul li.first + li is not prefrrable comapre to ul li:nth-child(2) because it will apply styles to second element if .first class is defined with first element of ul.  
+/*  
+-> ul li:nth-child(2) applies styles to 2nd element of ul. 
+
+//ul li.first + li is not prefrrable comapre to ul li:nth-child(2) because it will apply styles to second element only when .first class is defined with first element of ul.  
  */
 ul li:nth-child(2),
 ul li.first + li {...}
