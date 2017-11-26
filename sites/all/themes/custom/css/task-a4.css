@@ -14,11 +14,11 @@ a.some-class,
 // A.4.2 
 
 /* 
-.parent-class .child-class -> This style applies all child elements which having .child-class of .parent-class elements  
+.parent-class .child-class -> This style applies all child elements which having .child-class elements of .parent-class.   
    .parent-class > .child-class -> It will target elements which are direct children of a .parent-class element.
-   .child-class--variant  -> selecting all elements which are having .child-class--variant class with irrespective of any parent.
+   .child-class--variant  -> selecting all elements which are having .child-class--variant class irrespective of any parent.
    
-   // .parent-class > .child-clas is not preferred way, if we want to change order of child elements of parent. .child-class--variant applies  only to elements with this class, We need to defined with elements in every page, which is not suitable for reuse. 
+   // .parent-class > .child-clas is not preferred way, if we want to change order of child elements of parent. .child-class--variant applies  only to all elements with this class, So we need to defined with elements in every page, which is not suitable for reuse. 
 */
 
 .parent-class .child-class, 
@@ -32,7 +32,7 @@ a.some-class,
 .parent-class #child-id -> It applies to all child with #child-id ID of .parent class. If we want to particular child elements of any parent, this is preferrable compare to #child-id.
 #child-id -> Style will be applied to all elements with #child-id ID of page irrespective of any parent.
 
-// .parent-class #child-id is not preferrable if any chances to use #child-id element outside of the parent.
+// .parent-class #child-id is not preferrable if any chances to use #child-id ID element outside of the parent.
 */
 
 .parent-class #child-id,
@@ -41,9 +41,9 @@ a.some-class,
 
 /* 
 -> ul li a is selecting all anchor tags of onorderd list, this is preferrable compare to ul > li > a.
--> ul a selector slecting all anchor element of an unorder list with irrespective any order of elements.
+-> ul a selector slecting all anchor child element of an unorder list with irrespective any order of elements.
 
- //ul > li > a is applies styles to direct child of list. Which is not preferrable if we need to change order of elements, then style will not apply on to this.
+ //ul > li > a is applies styles to direct child of list, Which is not preferrable if we need to change order of elements, then this selector will not apply on to this.
  */
 // A.4.4 
 ul li a,
@@ -53,9 +53,9 @@ ul > li > a {..}
 
 // A.4.5 
 /*  
--> input[type="submit"] is applies to all submit button which is preferred for add common styles all submit button in the page.	 
+-> input[type="submit"] is applies to all submit button, which is useful for add common styles all submit button in the page.	 
 	
- //.submit-button class is useful when sumbit button needs little changes or particular styles, which is not preferrable for reuse if we want to change class of submit button or we should add this class to every submit button for styles.  
+ //.submit-button class is apply style to sumbit button, when needs to make little changes or add particular styles, which is not preferrable for reuse if we want to change class of submit button, if we need to syle, should add this class to every submit button for styles.  
  */
 input[type="submit"], 
 .submit-button {...} 
@@ -63,7 +63,7 @@ input[type="submit"],
 
 // A.4.6 
 /* 
--> ul li:last-child is add style to all last li elements of ul. preferrable when we want to add comman styles all last li child elements of ul in the page.
+-> ul li:last-child is add style to all last li elements of ul. This is useful when we want to add comman styles all last li child elements of ul in the page.
 
 //ul li.last-child is not preferrable for reuse beacause it applies styles to all li which having .last-child. It means selector may not be the last li element of ul. It applies only .last-child class is defined with li.
  */
