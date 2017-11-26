@@ -1,0 +1,8 @@
+name = custom
+description = Custom plugin for Webfirst Section B Task A1.
+core = 7.x
+files[] = custom.module
+package = custom
+version = "7.x-1.1"
+core = "7.x"
+

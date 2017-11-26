@@ -1,0 +1,28 @@
+name = custom
+description = Custom theme for Drupal Webfirst;
+core = 7.x
+
+; Supported Styles
+stylesheets[all][] = 'bootstrap/css/bootstrap.min.css'
+stylesheets[all][] = 'css/style.css'
+
+; Responsive
+stylesheets[only screen and (min-width: 980px) and (max-width: 1199px)][] = 'css/screens/tablet.css'
+stylesheets[only screen and (min-width: 720px) and (max-width: 979px)][] = 'css/screens/tablet-vertical.css'
+stylesheets[only screen and (max-width: 719px)][] = 'css/screens/mobile.css'
+stylesheets[only screen and (max-width: 479px)][] = 'css/screens/mobile-vertical.css'
+
+; Supported Javascript
+scripts[] = 'bootstrap/js/bootstrap.min.js'
+scripts[] = 'js/custom.js'
+
+regions[utility_links_left] = Utility Links LEFT
+regions[utility_links_right] = Utility Links RIGHT
+regions[sticky_header] = Sticky Header
+regions[main_menu] = Main menu
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[page_content_left] = Page Left Content
+regions[page_content_right] = Page Right Content
+regions[footer] = Footer

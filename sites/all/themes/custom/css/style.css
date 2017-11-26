@@ -1,0 +1,253 @@
+/* Core styles Start */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900,200italic,300italic,400italic,600italic);
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+@font-face {
+font-family: Helvetica Neue;
+src: url("../fonts/HelveticaNeue-LightCond.otf") format("opentype");
+}
+
+/* Common styles of site -- start*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+h1, h2, h3,h4, h5 {
+  line-height: 120%;
+  margin: 20px 0 12px;
+}
+
+h1 {
+  font-size:29px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+p {
+  margin: 1em 0;
+  color:#4F4E55;
+}
+
+a,a:hover,a:focus{
+  color:#083880;
+}
+
+ul, ol {
+  list-style: outside none none;
+  margin-left: 0;
+}
+
+img{
+max-width:100%;
+height:auto;	
+}
+
+body{
+	background: white;  
+	font-family: 'Lato', sans-serif;
+    color: #6e6d6d;
+    font-size:15px; 
+	font-weight: 300;
+    padding: 0px; 
+}
+.no-bullets{
+list-style: outside none none;
+}
+*:focus {
+    outline: 0 !important;
+}
+input[type="file"]:focus, input[type="checkbox"]:focus, input[type="radio"]:focus {
+  outline: none;
+}
+.clear{
+clear:both;	
+}
+ul.menu li {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+/* Common styles of site -- end*/
+
+/* Theme Style Start */
+
+#main-wrapper {
+  min-height: 33em;
+  padding-bottom: 2em;
+      margin-top: 8em;
+}
+
+#block-menu-menu-utility-links ul.menu li.last {
+  border-right: medium none;
+  padding-right: 0;
+}
+/* Style to utility link - start */
+#utility-links ul.menu li{
+  border-right: 1px solid #fff;
+  float: left;
+  padding: 0 14px;
+}
+#utility-links ul.menu li{
+  margin-left: 0;	
+}
+
+#utility-links .popup-element-title{
+	padding-right: 0;
+}
+#utility-links ul.menu li a {
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Style to utility link - end */
+
+#header {
+ padding-bottom: 10px;
+}
+
+.front #page-title{
+display:none
+}
+
+.front #page-title {
+  font-size: 34px;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+#footer-wrapper{
+background-color: #eee;
+min-height: 3em;	
+}
+
+#page-title {
+  color: #4f4e55;
+  font-size: 18px;
+  margin: 14px 0;
+}
+
+#user-login input[type="submit"],.submit-btn-wrapper a {
+  background-color: #124591;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px 1px #ccc;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  padding: 7px 28px;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 0 1em;
+}
+
+#page-front-wrapper .wrapper {
+  border-bottom: 1px solid #aaa;
+  padding: 1em 0;
+}
+
+#page-wrapper #page-left-wrapper{
+margin: 3px 0 0;	
+}
+
+.logged-in .header-wrapper {
+top: 65px;	
+}
+
+#utility-links {
+  background-color: #083880;
+  border-bottom: 4px solid #fff;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.header-wrapper{
+  position: fixed;	
+  z-index: 99;
+  right: 0;
+  top: 0; 
+  width: 100%;
+  left: 0;
+}
+
+#utility-links .region-utility-links-right p{
+color: #fff;	
+}
+
+.utility-links-left a{
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+    padding: 0 1.5em;
+	text-decoration: none;
+}
+
+#main-wrapper .block h2{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.node-type-case-report h2 {
+  margin: 1em 0 0 !important;
+}
+
+#main-wrapper .block-title {
+  margin: 3px 0 0 !important;
+  padding: 5px 15px 10px;
+}
+
+.item-list ul li {
+    margin: 0 0 0.25em 0.6em;
+}
+
+.footer-content {
+    padding-top: 1em;	
+}
+
+#pagetitle {
+    font-size: 20px;
+    margin: 10px 0;	
+}
+
+#block-block-2{
+    background-color: #e6e6e6;
+    padding: 1px 15px;
+    border-radius: 3px;
+}
+
+.page-node .main-content{
+    padding-top: 8px;	
+}
+
+/* Style to Task 3 view - start */
+.view-task-a3 .views-row {
+    background-color: #eee;
+    margin: 15px 30px;
+    padding: 1em;
+    min-height: 37.6em;
+}
+
+.view-task-a3 .views-field-title{
+     padding: 8px 0 15px;	
+}
+/* Style to Task 3 view - end */

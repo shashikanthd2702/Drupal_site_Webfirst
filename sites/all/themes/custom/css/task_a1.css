@@ -1,0 +1,18 @@
+/* Styles for task a1 view */
+
+.view-task-a1 .views-table tbody tr:nth-child(3n){
+background-color: #fcfc54;
+}
+
+.view-task-a1 .views-table tr th{
+    border: 2px solid #4F4E55;
+	    padding: 10px 10px;	
+    color: #4F4E55;		
+ }
+.view-task-a1 .views-table tr td{
+    border: 2px solid #4F4E55;
+	    padding: 0 10px;
+}
+.view-task-a1 .views-table tr td img {
+    padding: 10px 0px 0px;	
+}

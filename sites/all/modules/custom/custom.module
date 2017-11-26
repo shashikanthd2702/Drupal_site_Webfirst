@@ -1,0 +1,92 @@
+<?php
+
+/**
+* Implements hook_block_info().
+*/
+function custom_block_info() {
+  $blocks = array();
+
+  $blocks['prime_nodes_list'] = array(
+    'info' => t('Listing recent prime nodes '),
+  );
+
+  return $blocks;
+}
+
+
+/**
+* Implements hook_block_view().
+*/
+function custom_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'prime_nodes_list':
+      $block['subject'] = 'List of prime nodes';
+       $block['content'] = array(
+        '#markup' => prime_node_view_content(),
+        '#attached' => array(
+          'css' => array(
+            drupal_get_path('module', 'custom') . '/css/custom_block.css',
+          ),
+          'js' => array(
+            drupal_get_path('module', 'custom') . '/js/custom_block.js',
+          ),
+        ),
+      );
+	  
+      break;
+  }
+
+  return $block;
+}
+
+
+function prime_node_view_content() {
+	  $output = ''; $day_of_month = ''; $prime_node_aary = array(); $is_prime = ''; $list_nodes = '';
+	$result = get_prime_node_list();  
+    while($record = $result->fetchAssoc()) {
+		$day_of_month = date('j', $record['created']);
+		$is_prime = IsPrime($day_of_month);
+		if($is_prime){ 
+		 $prime_node_aary[$record['nid']] = $record['title'];
+		} 
+    }
+	 	if(count($prime_node_aary) > 0) {
+			$cnt = 1;
+		foreach($prime_node_aary as $pn_key => $pn_val){		
+			$list_nodes .= "<li>";
+			$list_nodes .= l($pn_val, "node/".$pn_key);
+			$list_nodes .= "</li>";		
+			$cnt++;
+			if($cnt > 5){ break;}
+		}
+		} else {
+			$list_nodes .= "<li>No results found</li>";
+		}
+	$output = "<div class='list-prime-node-wrap'><ul>".$list_nodes."</ul></div>";
+	  return $output;
+}
+
+function IsPrime($n)
+{
+ for($x=2; $x<$n; $x++)
+   {
+      if($n % $x ==0)
+	      {
+		   return 0;
+		  }
+    }
+  return 1;
+   }
+   
+function get_prime_node_list() {
+	
+	$query = db_select('node', 'n');
+    $query->fields('n',array('nid','title','created'))//SELECT the fields from node
+	->orderBy('created', 'DESC');//ORDER BY created
+
+	$result = $query->execute();
+	
+	return $result;
+}
